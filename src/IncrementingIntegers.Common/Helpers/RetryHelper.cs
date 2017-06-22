@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace IncrementingIntegers.Common.Helpers
 {
-    internal static class RetryHelper
+    public static class RetryHelper
     {
-        public static async Task<T> RetryOnFault<T>(Func<Task<T>> function, int maxTries)
+        public static async Task<T> RetryOnFault<T>(Func<Task<T>> function, Func<Exception, bool> retryIf, Func<Task> retryWhen, int maxTries)
         {
             for (int i = 0; i < maxTries; i++)
             {
@@ -13,26 +13,11 @@ namespace IncrementingIntegers.Common.Helpers
                 {
                     return await function().ConfigureAwait(false);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    if (i == maxTries - 1)
+                    if (!retryIf(ex))
                         throw;
-                }
-            }
 
-            return default(T);
-        }
-
-        public static async Task<T> RetryOnFault<T>(Func<Task<T>> function, int maxTries, Func<Task> retryWhen)
-        {
-            for (int i = 0; i < maxTries; i++)
-            {
-                try
-                {
-                    return await function().ConfigureAwait(false);
-                }
-                catch
-                {
                     if (i == maxTries - 1)
                         throw;
                 }
@@ -42,9 +27,5 @@ namespace IncrementingIntegers.Common.Helpers
 
             return default(T);
         }
-
-        //Usage
-        //string row = await RetryOnFault(() => GetRow(partitionKey,rowKey), 3);
-        //string row = await RetryOnFault(() => GetRow(partitionKey,rowKey), 3, () => Task.Delay(1000));
     }
 }

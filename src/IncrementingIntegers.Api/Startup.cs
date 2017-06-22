@@ -8,7 +8,6 @@ using IncrementingIntegers.Common.Configurations;
 using IncrementingIntegers.Api.Mappings;
 using AutoMapper;
 using System.Net;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using IncrementingIntegers.DataAccess.Extensions;
 
@@ -34,6 +33,7 @@ namespace IncrementingIntegers.Api
         {
             // Add Configurations
             services.Configure<StorageOptions>(Configuration.GetSection("StorageOptions"));
+            services.Configure<RetryOptions>(Configuration.GetSection("RetryOptions"));
 
             // Add Layers
             services.AddLogicLayer();

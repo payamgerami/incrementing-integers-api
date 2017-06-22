@@ -11,9 +11,9 @@ namespace IncrementingIntegers.Api.Mappings
         {
             CreateMap<NextIdResult, NextIdResponse>();
             CreateMap<CurrentIdResult, CurrentIdResponse>();
-            CreateMap<UniqueIntegerUser, NextIdResult>()
+            CreateMap<UniqueIntegerUserTableEntity, NextIdResult>()
                 .ForMember(dest => dest.NextId, opt => opt.MapFrom(src => src.Id));
-            CreateMap<UniqueIntegerUser, CurrentIdResult>()
+            CreateMap<UniqueIntegerUserTableEntity, CurrentIdResult>()
                 .ForMember(dest => dest.CurrentId, opt => opt.MapFrom(src => src.Id));
         }
     }

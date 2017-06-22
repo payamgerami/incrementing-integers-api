@@ -22,35 +22,31 @@ namespace IncrementingIntegers.DataAccess.Repositories
             _table = tableClient.GetTableReference(_tableName);
         }
 
-        public async Task<UniqueIntegerUser> GetOrCreate(string email)
+        public async Task<UniqueIntegerUserTableEntity> GetOrCreate(string email)
         {
-            //TODO: Add concurrency handling and retry
-
-            TableOperation retrieveOperation = TableOperation.Retrieve<UniqueIntegerUser>(_partitionKey, email);
+            TableOperation retrieveOperation = TableOperation.Retrieve<UniqueIntegerUserTableEntity>(_partitionKey, email);
             TableResult retrievedResult = await _table.ExecuteAsync(retrieveOperation);
 
             if (retrievedResult.Result != null)
             {
-                return (UniqueIntegerUser)retrievedResult.Result;
+                return (UniqueIntegerUserTableEntity)retrievedResult.Result;
             }
             else
             {
-                UniqueIntegerUser user = new UniqueIntegerUser(_partitionKey, email);
+                UniqueIntegerUserTableEntity user = new UniqueIntegerUserTableEntity(_partitionKey, email);
                 TableOperation insertOperation = TableOperation.Insert(user);
 
                 TableResult insertResult = await _table.ExecuteAsync(insertOperation);
 
-                return (UniqueIntegerUser)insertResult.Result;
+                return (UniqueIntegerUserTableEntity)insertResult.Result;
             }
         }
 
-        public async Task Update(UniqueIntegerUser uniqueIntegerUser)
+        public async Task<TableResult> Update(UniqueIntegerUserTableEntity uniqueIntegerUser)
         {
-            //TODO: Add concurrency handling and retry
-
             TableOperation updateOperation = TableOperation.Replace(uniqueIntegerUser);
 
-            await _table.ExecuteAsync(updateOperation);
+            return await _table.ExecuteAsync(updateOperation);
         }
     }
 }
