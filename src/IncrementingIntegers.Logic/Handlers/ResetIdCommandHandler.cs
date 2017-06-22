@@ -25,7 +25,7 @@ namespace IncrementingIntegers.Logic.Handlers
 
         public async Task DoWork(ResetIdCommand command)
         {
-            UniqueIntegerUserTableEntity tableEntity = await _uniquIntegerRepository.GetOrCreate(command.Email);
+            UniqueIntegerUserTableEntity tableEntity = await _uniquIntegerRepository.GetOrCreate(command.UserId);
             tableEntity.Id = command.Id;
 
             await RetryHelper.RetryOnFault<TableResult>(
@@ -46,7 +46,7 @@ namespace IncrementingIntegers.Logic.Handlers
                 },
                 async () =>
                 {
-                    tableEntity = await _uniquIntegerRepository.GetOrCreate(command.Email);
+                    tableEntity = await _uniquIntegerRepository.GetOrCreate(command.UserId);
                     tableEntity.Id = command.Id;
                 },
                 _retryOpptions.MaxRetry);

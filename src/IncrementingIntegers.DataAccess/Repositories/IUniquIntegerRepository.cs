@@ -6,7 +6,7 @@ namespace IncrementingIntegers.DataAccess.Repositories
 {
     public interface IUniquIntegerRepository
     {
-        Task<UniqueIntegerUserTableEntity> GetOrCreate(string email);
+        Task<UniqueIntegerUserTableEntity> GetOrCreate(string userId);
         Task<TableResult> Update(UniqueIntegerUserTableEntity uniqueIntegerUser);
     }
 }

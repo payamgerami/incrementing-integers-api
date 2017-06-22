@@ -20,7 +20,7 @@ namespace IncrementingIntegers.Logic.Handlers
 
         public async Task<CurrentIdResult> DoWork(CurrentIdQuery query)
         {
-            UniqueIntegerUserTableEntity tableEntity = await _uniquIntegerRepository.GetOrCreate(query.Email);
+            UniqueIntegerUserTableEntity tableEntity = await _uniquIntegerRepository.GetOrCreate(query.UserId);
 
             return _mapper.Map<CurrentIdResult>(tableEntity);
         }

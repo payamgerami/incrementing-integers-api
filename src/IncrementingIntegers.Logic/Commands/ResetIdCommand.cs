@@ -3,11 +3,11 @@
     public class ResetIdCommand
     {
         public int Id { get; set; }
-        public string Email { get; set; }
+        public string UserId { get; set; }
 
-        public ResetIdCommand(string email, int id)
+        public ResetIdCommand(string userId, int id)
         {
-            Email = email;
+            UserId = userId;
             Id = id;
         }
     }

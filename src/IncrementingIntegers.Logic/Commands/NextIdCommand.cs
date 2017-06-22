@@ -2,11 +2,11 @@
 {
     public class NextIdCommand
     {
-        public string Email { get; set; }
+        public string UserId { get; set; }
 
-        public NextIdCommand(string email)
+        public NextIdCommand(string userId)
         {
-            Email = email;
+            UserId = userId;
         }
     }
 }

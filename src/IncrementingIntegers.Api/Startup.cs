@@ -10,6 +10,7 @@ using AutoMapper;
 using System.Net;
 using Microsoft.AspNetCore.Http;
 using IncrementingIntegers.DataAccess.Extensions;
+using IncrementingIntegers.Api.Authentication;
 
 namespace IncrementingIntegers.Api
 {
@@ -85,6 +86,9 @@ namespace IncrementingIntegers.Api
                         await context.Response.WriteAsync(message);
                     })
                 );
+
+            //TODO: Refactor this middleware
+            app.UseFacebookAuthentication();
 
             app.UseMvc();
         }

@@ -2,11 +2,11 @@
 {
     public class CurrentIdQuery
     {
-        public string Email { get; set; }
+        public string UserId { get; set; }
 
-        public CurrentIdQuery(string email)
+        public CurrentIdQuery(string userId)
         {
-            Email = email;
+            UserId = userId;
         }
     }
 }

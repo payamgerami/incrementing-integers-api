@@ -22,9 +22,9 @@ namespace IncrementingIntegers.DataAccess.Repositories
             _table = tableClient.GetTableReference(_tableName);
         }
 
-        public async Task<UniqueIntegerUserTableEntity> GetOrCreate(string email)
+        public async Task<UniqueIntegerUserTableEntity> GetOrCreate(string userId)
         {
-            TableOperation retrieveOperation = TableOperation.Retrieve<UniqueIntegerUserTableEntity>(_partitionKey, email);
+            TableOperation retrieveOperation = TableOperation.Retrieve<UniqueIntegerUserTableEntity>(_partitionKey, userId);
             TableResult retrievedResult = await _table.ExecuteAsync(retrieveOperation);
 
             if (retrievedResult.Result != null)
@@ -33,7 +33,7 @@ namespace IncrementingIntegers.DataAccess.Repositories
             }
             else
             {
-                UniqueIntegerUserTableEntity user = new UniqueIntegerUserTableEntity(_partitionKey, email);
+                UniqueIntegerUserTableEntity user = new UniqueIntegerUserTableEntity(_partitionKey, userId);
                 TableOperation insertOperation = TableOperation.Insert(user);
 
                 TableResult insertResult = await _table.ExecuteAsync(insertOperation);
