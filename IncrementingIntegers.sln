@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncrementingIntegers.Api", "src\IncrementingIntegers.Api\IncrementingIntegers.Api.csproj", "{BA011A9E-FE9A-4C3E-ADC7-581B55BE0BD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncrementingIntegers.Contract.V1", "src\IncrementingIntegers.Contract.V1\IncrementingIntegers.Contract.V1.csproj", "{DF0D4361-2D5F-43FC-B0A9-2C00BABCE6AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncrementingIntegers.DataAccess", "src\IncrementingIntegers.DataAccess\IncrementingIntegers.DataAccess.csproj", "{45940C22-89FF-4DC5-956A-3AE0C396A227}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncrementingIntegers.Logic", "src\IncrementingIntegers.Logic\IncrementingIntegers.Logic.csproj", "{FD3B98FC-8E21-4E6D-A903-44BBC9AB31DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncrementingIntegers.Common", "src\IncrementingIntegers.Common\IncrementingIntegers.Common.csproj", "{02E1C503-81AB-4252-AA9D-587C982F9FB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA011A9E-FE9A-4C3E-ADC7-581B55BE0BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA011A9E-FE9A-4C3E-ADC7-581B55BE0BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA011A9E-FE9A-4C3E-ADC7-581B55BE0BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA011A9E-FE9A-4C3E-ADC7-581B55BE0BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0D4361-2D5F-43FC-B0A9-2C00BABCE6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0D4361-2D5F-43FC-B0A9-2C00BABCE6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0D4361-2D5F-43FC-B0A9-2C00BABCE6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0D4361-2D5F-43FC-B0A9-2C00BABCE6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45940C22-89FF-4DC5-956A-3AE0C396A227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45940C22-89FF-4DC5-956A-3AE0C396A227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45940C22-89FF-4DC5-956A-3AE0C396A227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45940C22-89FF-4DC5-956A-3AE0C396A227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3B98FC-8E21-4E6D-A903-44BBC9AB31DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3B98FC-8E21-4E6D-A903-44BBC9AB31DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3B98FC-8E21-4E6D-A903-44BBC9AB31DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3B98FC-8E21-4E6D-A903-44BBC9AB31DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E1C503-81AB-4252-AA9D-587C982F9FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E1C503-81AB-4252-AA9D-587C982F9FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E1C503-81AB-4252-AA9D-587C982F9FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E1C503-81AB-4252-AA9D-587C982F9FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

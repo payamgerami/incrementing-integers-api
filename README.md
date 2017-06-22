@@ -1,2 +1,2 @@
-# incrementing-integers-api
+# Incrementing Integers Api
 Auto increment id generator
